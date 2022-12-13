@@ -124,6 +124,10 @@ class TestSCT(SavepointCase):
         self.payment_mode.payment_method_id.pain_version = "pain.001.001.05"
         self.check_eur_currency_sct()
 
+    def test_pain_001_09(self):
+        self.payment_mode.payment_method_id.pain_version = "pain.001.001.09"
+        self.check_eur_currency_sct()
+
     def test_pain_003_03(self):
         self.payment_mode.payment_method_id.pain_version = "pain.001.003.03"
         self.check_eur_currency_sct()

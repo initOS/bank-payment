@@ -17,3 +17,4 @@
 * `Sygel Technology <https://www.sygel.es>`_:
 
   * Valentin Vinagre <valentin.vinagre@sygel.es>
+* Florian Kantelberg <florian.kantelberg@initos.com>

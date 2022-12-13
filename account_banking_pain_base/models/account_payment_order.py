@@ -378,7 +378,11 @@ class AccountPaymentOrder(models.Model):
         else:
             request_date_tag = "ReqdExctnDt"
         requested_date_node = etree.SubElement(payment_info, request_date_tag)
-        requested_date_node.text = requested_date
+        if gen_args.get("pain_flavor") == "pain.001.001.09":
+            dt_node = etree.SubElement(requested_date_node, "Dt")
+            dt_node.text = requested_date
+        else:
+            requested_date_node.text = requested_date
         return payment_info, nb_of_transactions, control_sum
 
     @api.model
@@ -512,6 +516,7 @@ class AccountPaymentOrder(models.Model):
                 2,
                 gen_args=gen_args,
             )
+
             if partner.street:
                 adrline1 = etree.SubElement(postal_address, "AdrLine")
                 adrline1.text = self._prepare_field(

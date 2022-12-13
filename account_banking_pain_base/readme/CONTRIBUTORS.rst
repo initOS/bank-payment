@@ -13,3 +13,4 @@
 
   * Pedro M. Baeza
   * Carlos Roca
+* Florian Kantelberg <florian.kantelberg@initos.com>
